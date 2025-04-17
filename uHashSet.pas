@@ -22,8 +22,10 @@ function hash_function(value: string): Integer;
 var
     sum_of_chars, i: Integer;
 begin
-    WriteLn('No has implementado la función hash_function.');
-    hash_function := 0;
+    sum_of_chars := 0;
+    for i := 0 to Length(value) do
+        sum_of_chars := (sum_of_chars + ord(value[i])) mod HashSetSize;
+    hash_function := sum_of_chars;
 end;
 
 procedure add(var hashset: THashSet; value: string);

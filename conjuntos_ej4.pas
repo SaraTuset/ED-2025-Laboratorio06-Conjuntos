@@ -69,6 +69,9 @@ begin
     intento := 'AAAA';
     WriteLn('''', intento, ''' tiene el hash ', hash_function(intento));
     add(my_hash_set, intento);
+    intento := 'BBBB';
+    WriteLn('''', intento, ''' tiene el hash ', hash_function(intento));
+    add(my_hash_set, intento);
 
     WriteLn('--------------------');
     show_hashset_state(my_hash_set);
