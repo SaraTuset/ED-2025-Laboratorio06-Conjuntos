@@ -31,7 +31,7 @@ implementation
 {Operaciones básicas}
     procedure init(var c: tConjunto);
     begin
-         c := [];
+      c := [];
     end;
 
     procedure add(var c: tConjunto; x: integer);
@@ -41,7 +41,7 @@ implementation
 
     procedure remove(var c: tConjunto; x: integer);
     begin
-      exclude(c, x);
+       Exclude(c, x);
     end;
 
     function contains(c: tConjunto; x: integer): boolean;
@@ -51,18 +51,18 @@ implementation
 
     function is_empty_con(c: tConjunto): boolean;
     begin
-      is_empty_con := [] = c;
+       is_empty_con := [] = c;
     end;
 
     function size(c: tConjunto): integer;
     var
       i, count: Integer;
     begin
-      count := 0;
-      for i := 0 to MAX_SET do
-          if i in c then
-             count += 1;
-      size := count;
+       count := 0;
+       for i := 0 to MAX_SET do
+           if i in c then
+              count += 1;
+       size := count;
     end;
 
     function to_string_con(c: tConjunto): string;
@@ -70,36 +70,32 @@ implementation
       i: Integer;
       s: String;
     begin
-      s := '';
-      for i := 0 to MAX_SET do
-          if i in c then
-             s += IntToStr(i) + ' ';
-      to_string_con := s;
+       s := '';
+       for i:= 0 to MAX_SET do
+           if i in c then
+              s += IntToStr(i) + ' ';
+       to_string_con := s;
     end;
 
     procedure empty(var c: tConjunto);
-    var
-      i: Integer;
     begin
-      for i := 0 to MAX_SET do
-          if i in c then
-             exclude(c, i);
+       c := [];
     end;
 
     {Otras operaciones}
     procedure union(c1, c2: tConjunto; var c3: tConjunto);
     begin
-      c3 := c1 + c2;
+       c3 := c1 + c2;
     end;
 
     procedure intersection(c1, c2: tConjunto; var c3: tConjunto);
     begin
-      c3 := c1 * c2;
+       c3 := c1 * c2;
     end;
 
     procedure difference(c1, c2: tConjunto; var c3: tConjunto);
     begin
-      c3 := c1 - c2;
+       c3 := c1 - c2;
     end;
 
 end.
